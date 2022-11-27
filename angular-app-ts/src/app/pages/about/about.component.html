@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName">
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName">
+
+  <div formGroupName="address">
+    <h2>Address</h2>
+  
+    <label for="street">Street: </label>
+    <input id="street" type="text" formControlName="street">
+  
+    <label for="city">City: </label>
+    <input id="city" type="text" formControlName="city">
+  
+    <label for="state">State: </label>
+    <input id="state" type="text" formControlName="state">
+  
+    <label for="zip">Zip Code: </label>
+    <input id="zip" type="text" formControlName="zip">
+  </div>
+
+
+  <div formArrayName="experience">
+    <h2 *ngIf="experience.controls.length > 0">Experience</h2>
+    <div *ngFor="let item of experience.controls; index as index" [formGroupName]="index">
+      <label for="time">time: </label>
+      <input id="time" type="text" formControlName="time">
+
+      <label for="type">type:</label>
+      <select id="type" formControlName="type">
+        <option value="education">education</option>
+        <option value="work">work</option>
+      </select>
+
+      <label for="things">things: </label>
+      <input id="things" type="text" formControlName="things">
+    </div>
+    <button (click)="addExperience()">add experience</button>
+  </div>
+   
+  <button type="submit" [disabled]="!form.valid">submit</button>
+</form>

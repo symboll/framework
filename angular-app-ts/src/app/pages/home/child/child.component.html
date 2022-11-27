@@ -1,0 +1,9 @@
+<div class="card" >
+  <div *ngIf="!isModify; else modify" (click)="modifyName()">name: {{ item.name | uppercase }}</div>
+  <ng-template #modify>
+    <label for="name">name: </label>
+    <input id="name" type="text" #nameInput [(ngModel)]="item.name" (blur)="onInputBlur()">
+  </ng-template>
+  <div>age: {{ item.age }}</div>
+  <div>gender: {{ item.gender }}</div>
+</div>
