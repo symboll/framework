@@ -1,0 +1,54 @@
+
+
+.async {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+  .cover {
+    flex-shrink: 0;
+    width: 150px;
+    height: 62px;
+    border-radius: 4px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+    }
+  }
+  .context {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    @mixin text-overflow {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; 
+    }
+    .name {
+      height: 16px;
+
+      font-size: 12px;
+      font-weight: 700;
+      color: #333;
+      @include text-overflow;
+    }
+    .desc {
+      margin-top: 10px;
+      height: 14px;
+
+      font-size: 12px;
+      color: #71777c;
+      @include text-overflow;
+    }
+    .author {
+      margin-top: 10px;
+      height: 14px;
+
+      font-weight: 400;
+      font-size: 12px;
+      color: #333;
+    }
+  }
+}

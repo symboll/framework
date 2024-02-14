@@ -1,0 +1,1 @@
+export default (imgName: string) => new URL(`../assets/${imgName}`, import.meta.url).href
