@@ -18,5 +18,5 @@ app
   .use(store)
   .use(router)
   .use(useResize)
-  .use(message)
+  .use(message, { duration: 5000 })
   .mount('#app')

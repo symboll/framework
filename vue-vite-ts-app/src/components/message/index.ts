@@ -3,8 +3,8 @@ import type { App, VNode } from 'vue'
 import Message from './index.vue'
 
 export default {
-  install (app: App) {
-    const vnode:VNode = createVNode(Message)
+  install (app: App, config: any) {
+    const vnode:VNode = createVNode(Message, config)
     render(vnode, document.body)
     app.config.globalProperties.$message = {
       show: vnode.component?.exposed?.show,

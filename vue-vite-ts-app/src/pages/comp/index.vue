@@ -7,11 +7,11 @@
 
     <div class="title">全局组件</div>
     <div class="btn-group">
-      <button @click="hints('success')">success</button>
-      <button @click="hints('warning')">warning</button>
-      <button @click="hints('info')">info</button>
-      <button @click="hints('error')">error</button>
-      <button @click="hints('default')">default</button>
+      <button @click="show('success')">success</button>
+      <button @click="show('warning')">warning</button>
+      <button @click="show('info')">info</button>
+      <button @click="show('error')">error</button>
+      <button @click="show('default')">default</button>
       <button @click="hide">hide</button>
     </div>
 
@@ -56,7 +56,7 @@
   const AsyncComp = defineAsyncComponent(() => import('./async.vue'))
 
 
-  const hints = (type: messageType) => {
+  const show = (type: messageType) => {
     app!.proxy?.$message.show({ message: '提示信息', type }) 
     // app!.proxy?.$message.show('信息') // ‘default’
     // app!.proxy?.$message.success('信息') 

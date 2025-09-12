@@ -1,10 +1,13 @@
 
 export type messageType = 'success' | 'error' | 'warning' | 'info' | 'default'
 
-interface msg {
+export interface IMessage {
   message: string,
-  type: messageType
+  type: messageType,
+  duration?: number,
+  close?: boolean,
+  icon?: boolean,
+
+  uuid?: string,
 }
 
-
-export type msgParams = string | msg
