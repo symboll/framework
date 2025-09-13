@@ -8,16 +8,14 @@
 
     <child v-model="visible" v-model:message.debounce="message"></child>
   </div>
-
-  <version v-high-light></version>
-  <code-comp v-high-light:xml></code-comp>
-
+  <editor :markdown="CodeComp"  />
 </template>
 <script setup lang='ts'>
   import { ref } from 'vue'
   import Child from './child.vue'
   import Version from './version.md'
   import CodeComp from './code.md'
+  import Editor from '@/components/editor/index.vue'
 
   const visible = ref(false)
   const toggle = () => {

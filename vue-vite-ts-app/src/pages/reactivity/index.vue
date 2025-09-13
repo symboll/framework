@@ -69,13 +69,13 @@
 
   <div class="title">toRefs:</div>
   <div class="desc">
-    <to-refs-comp v-high-light></to-refs-comp>
+    <editor :markdown="toRefsComp" language="typescript"/>
   </div>
   <hr/>
 
   <div class="title">toRaw:</div>
   <div class="desc">
-    <to-raw-comp v-high-light></to-raw-comp>
+     <editor :markdown="toRawComp" language="typescript"/>
   </div>
   <button @click="change7">change</button>
 </template>
@@ -94,6 +94,7 @@ import {
   toRaw
 } from 'vue'
 import type { Ref } from 'vue'
+import Editor from '@/components/editor/index.vue'
 
 import toRefsComp from './toRefs.md'
 import toRawComp from './toRaw.md'
@@ -218,4 +219,7 @@ const change7 = () => {
 }
 </script>
 <style scoped lang="scss">
+.desc {
+  position: relative;
+}
 </style>

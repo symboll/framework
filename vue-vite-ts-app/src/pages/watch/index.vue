@@ -21,13 +21,14 @@
     </div>
     <button type="submit">submit</button>
   </form>
-  <watch-comp  v-high-light />
+  <editor :markdown="WatchComp" language="javascript"/>
   <div id="dom">ele</div>
   <button @click="stop"> stop watchEffect</button>
 </template>
 <script setup lang='ts'>
   import { ref, watch, watchEffect } from 'vue'
   import WatchComp from './index.md'
+  import editor from '@/components/editor/index.vue'
 
   interface DeepObject {
     [prop: string]: any 

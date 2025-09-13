@@ -12,12 +12,9 @@
     <textarea v-model="message"></textarea>
     <button @click="send">send</button>
   </div>
-
-  <markdown v-high-light></markdown>
 </template>
 <script setup lang='ts'>
   import { ref, reactive, nextTick } from 'vue'
-  import markdown from './index.md'
   const box = ref<HTMLDivElement>()
   const message = ref('')
   const chatList = reactive([

@@ -1,7 +1,6 @@
 <template>
   <div class="title">Global</div>
-  <code-comp v-high-light></code-comp>
-
+  <editor :markdown="codeComp" language="javascript" />
   <button @click="show('success')">success</button>
   <button @click="show('warning')">warning</button>
   <button @click="show('info')">info</button>
@@ -11,8 +10,9 @@
 </template>
 <script setup lang='ts'>
   import { getCurrentInstance } from 'vue'
-  import codeComp from './index.md'
   import { messageType } from '@/interface/message';
+  import Editor from '@/components/editor/index.vue'
+  import codeComp from './index.md'
 
   const app = getCurrentInstance()
   console.log(app?.proxy?.$http())

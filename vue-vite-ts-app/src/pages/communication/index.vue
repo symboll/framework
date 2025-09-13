@@ -12,8 +12,7 @@
       ref="child"
     ></child>
   </div>
-  <fc-comp v-high-light></fc-comp>
-
+  <editor :markdown="fcComp" language="javascript"/>
   <div class="title">provide & inject</div>
   <div class="wrap">
     <label v-for="color in colorList" :key="color">
@@ -31,6 +30,7 @@
 </template>
 <script setup lang='ts'>
   import { ref, provide, readonly } from 'vue'
+  import Editor from '@/components/editor/index.vue'
   import Child from './child.vue';
   import Branch from './branch.vue'
   import BrotherA from './brother-a.vue'

@@ -22,8 +22,8 @@ const router = createRouter({
  * 前置守卫
  */
 router.beforeEach((to, from, next) => {
-  console.log('to', to)
-  console.log('from', from)
+  // console.log('to', to)
+  // console.log('from', from)
   next()
 })
 
@@ -31,8 +31,8 @@ router.beforeEach((to, from, next) => {
  * 后置守卫
  */
 router.afterEach((to, from) => {
-  console.log('to', to)
-  console.log('from', from)
+  // console.log('to', to)
+  // console.log('from', from)
 })
 
 export default router

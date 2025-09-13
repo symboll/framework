@@ -18,13 +18,14 @@
   </dialog-comp>
 
   <div class="desc">v-lazy</div>
-  <lazy-code v-high-light></lazy-code>
+  <editor :markdown="LazyCode" language="javascript" />
   <lazy-comp v-lazy></lazy-comp>
 </template>
 <script setup lang='ts'>
   import { ref } from 'vue'
   import type { Directive, DirectiveBinding } from 'vue'
   import Child from './child.vue'
+  import Editor from '@/components/editor/index.vue'
   import DialogComp from '@/components/dialog/index.vue'
   import LazyComp from './lazy/index.vue'
   import LazyCode from './lazy/index.md'
@@ -40,15 +41,6 @@
     created () {},
     beforeMount () {},
     mounted (el:HTMLElement, dir: DirectiveBinding<Dir>) {
-      console.log(el)
-      // console.log(dir.dir)            // lifeCycle
-      // console.log(dir.instance)
-      // console.log(dir.oldValue)
-      console.log('arg: ', dir.arg)   // name
-      console.log('modifiers: ', dir.modifiers)      // { desc: true }
-      console.log('value: ',dir.value)   // { background: 'red' }
-      console.log('value: ',dir.value.background) 
-
       el.style.background = dir.value.background
     }, 
     beforeUpdate () {},

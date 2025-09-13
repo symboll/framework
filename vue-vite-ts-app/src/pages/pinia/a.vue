@@ -12,11 +12,11 @@
 
   <br>
   <button @click="reset">reset</button>
-
-  <code-comp v-high-light></code-comp>
+  <editor :markdown="CodeComp" :language="'javascript'"/>
 </template>
 <script setup lang='ts'>
 import { useStore } from '@/store'
+import Editor from '@/components/editor/index.vue'
 import CodeComp from './index.md'
 const store = useStore()
 

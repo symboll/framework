@@ -13,12 +13,12 @@
       <span class="custom">{{ item.name }}</span>
     </template>
   </d-slots>
-  <code-comp v-high-light></code-comp>
-
+  <Editor :markdown="CodeComp" language="javascript"/>
 
 </template>
 <script setup lang='ts'>
 import { ref } from 'vue'
+import Editor from '@/components/editor/index.vue'
 import DProps from './d-props.vue'
 import DEmit from './d-emit.vue'
 import DOptions from './d-options.vue'
